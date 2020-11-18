@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "876004794753",
+    "firebase_url": "https://gberaa-50f78.firebaseio.com",
+    "project_id": "gberaa-50f78",
+    "storage_bucket": "gberaa-50f78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876004794753:android:471fb1e291704b89e0c880",
+        "android_client_info": {
+          "package_name": "om.example.gberaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876004794753-2a1cg3onemlh2clij4o18pbua2u3j8me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACol0U9wmbLFkIbcIxL0zjKGS6gVu3LFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876004794753-2a1cg3onemlh2clij4o18pbua2u3j8me.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
