@@ -12,31 +12,62 @@ class _DeliveryDashboardState extends State<DeliveryDashboard> {
   var firebaseUser = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dashboard'),
+        backgroundColor: Colors.orangeAccent,
+      ),
+      body: StreamBuilder(
+          stream: FirebaseFirestore.instance
+              .collection('deliveryitems')
+              .snapshots(),
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (!snapshot.hasData) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return ListView(
+              children: snapshot.data.docs.map((document) {
+                return Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Center(
+                    child: Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: MediaQuery.of(context).size.height / 6,
+                        child: Column(
+                          children: <Widget>[
+                            Text('Status: PENDING'),
+                            Text('Pickup Address: ' + document['pickup']),
+                            Text('Delivery Address: ' + document['delivery']),
+                            Text('Date: ' + document['date']),
+                            Text('Receiver\'s name: ' + document['name']),
+                            Text('Receiver\'s phone number: ' +
+                                document['number']),
+                            Text('Notes: ' + document['notes']),
+                          ],
+                        )),
+                  ),
+                );
+              }).toList(),
+            );
+          }),
+    );
+  }
+}
+/*Container(
           child: MaterialButton(
             onPressed: () {
               firestoreInstance
                   .collection("deliveryitems")
-                  .doc(firebaseUser.uid)
-                  .set({
-                "receiverName": "Alimson",
-                "receiverPhone": "08123456789",
-                "pickupAddress": "Australia",
-                "deliveryAddress": "Canada",
-                "packageType": "Small Parcel",
-                "date": "25-12-2020/12:35",
-                "notes": "wahala be like bicycle",
-              }, SetOptions(merge: true)).then((value) {
-                print('success!');
+                  .snapshots()
+                  .listen((result) {
+                result.docs.forEach((result) {
+                  print(result.data());
+                });
               });
             },
-            child: Text('Add Data'),
-            splashColor: Colors.orangeAccent,
+            child: Text('Press me'),
           ),
-        ),
-      ],
-    );
-  }
-}
+        ),*/

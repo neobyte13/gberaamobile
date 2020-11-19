@@ -1,3 +1,4 @@
+import 'package:Gberaa/ui/screens/deliveryDashboard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -205,14 +206,19 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                               "type": dropdownValue,
                               "date": DateTime.now(),
                             }).then((_) {
-                              Scaffold.of(context).showSnackBar(SnackBar(
-                                  content: Text('Successfully Added')));
                               phoneController.clear();
                               nameController.clear();
                               pickupController.clear();
                               deliveryController.clear();
                               notesController.clear();
-                              print("success!");
+                              print("Success!");
+                              Future.delayed(Duration(seconds: 2), () {
+                                // 5s over, navigate to a new page
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => DeliveryDashboard()));
+                              });
                             });
                           } /*{
                             if (_formKey.currentState.validate()) {
