@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
+              alignment: Alignment.center,
               child: Text(
                 'What would you like to do today?',
                 style: GoogleFonts.lato(

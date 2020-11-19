@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:Gberaa/ui/screens/deliveryDashboard.dart';
 import 'package:Gberaa/ui/screens/logIn.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -157,23 +156,6 @@ class _SignUpState extends State<SignUp> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => LogIn(),
-                    ),
-                  );
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Have an account? Log In',
-                    style: TextStyle(fontSize: 15.0),
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DeliveryDashboard(),
                     ),
                   );
                 },
