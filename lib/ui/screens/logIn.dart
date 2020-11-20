@@ -31,6 +31,7 @@ class _LogInState extends State<LogIn> {
                 child: Text(
                   'Log In',
                   style: GoogleFonts.lato(
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                     color: Colors.orange,
                   ),

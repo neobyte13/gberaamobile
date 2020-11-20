@@ -31,6 +31,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
       child: Text(
         'Place a delivery request',
         style: GoogleFonts.lato(
+          fontWeight: FontWeight.bold,
           fontSize: 30,
           color: Colors.orange,
         ),

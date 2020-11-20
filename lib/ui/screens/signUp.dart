@@ -40,6 +40,7 @@ class _SignUpState extends State<SignUp> {
                 child: Text(
                   'Sign In',
                   style: GoogleFonts.lato(
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                     color: Colors.orange,
                   ),
